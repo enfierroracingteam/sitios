@@ -1,0 +1,783 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background-color: #afafaf;
+}
+
+.header {
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+  position: relative; /* Aseguramos que el header tenga posicionamiento relativo */
+  z-index: 250; /* Elevamos el z-index para que esté sobre otros elementos */
+}
+
+.logo {
+  width: 200px;
+}
+
+.menu-icon {
+  font-size: 30px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Z-index aún más alto para asegurarse de que el ícono está por encima del menú desplegado */
+}
+
+.navbar {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  padding-top: 100px;
+  width: 250px;
+  position: fixed; /* Cambiado a fixed para un mejor control de la posición */
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  transform: translateX(-250px); /* Asegúrate de que esto coincida con el valor en JavaScript */
+  transition: transform 0.3s; /* Para animar el menú */
+  z-index: 750; 
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 60px; /* Dar espacio para el icono de menú */
+}
+
+.navbar li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.main {
+  margin-left: 260px; /* Ajustar según el ancho del menú lateral */
+  padding: 20px;
+  transition: margin-left 0.3s; /* Animación para el contenido principal */
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5; /* Menor z-index para que quede bajo el menú */
+}
+
+.main h1 {
+  font-size: 24px; /* Tamaño grande para el título */
+  color: #d10000; /* Un rojo intenso, ajusta según tu paleta de colores */
+  position: static;
+  padding-top: 20px;
+}
+  
+.main p {  font-size: 16px; /* Tamaño adecuado para texto descriptivo */
+  color: #333; /* Gris oscuro para mejor lectura */
+  padding: 5px; /* Espaciado interno */
+  position: static;
+  }
+
+
+  .logo {
+    width: 200px;
+    display: block;
+    margin: 20px auto 0;  /* Ajusta el margen superior según sea necesario */
+  }
+  
+
+/* BUSCADOR  */
+
+  .search-form {
+    position: absolute;
+    top: 110%;  /* Posiciona el formulario justo debajo del logo */
+    left: 50%;  /* Centra el formulario horizontalmente */
+    transform: translateX(-50%);  /* Ajusta la posición para que quede centrado exactamente */
+    width: 80%;  /* Ajusta el ancho del formulario según prefieras */
+
+  }
+  
+  .search-form input[type="text"] {
+    width: 80%;  /* Ocupa la mayor parte del ancho del formulario */
+    padding: 8px;
+    margin-right: -4px;  /* Para que el botón quede pegado al input */
+    border: 1px solid #ccc;  /* Agrega un borde para mejor definición, ajusta según el diseño */
+    outline: none;
+  }
+  
+  .search-form button {
+    padding: 8px 12px;
+    background-color: #d10000;  /* Color de fondo del botón */
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .search-form button i {
+    font-size: 16px;  /* Tamaño del ícono de la lupa */
+  }
+
+
+/* SLIDESHOW */
+
+.slideshow-container {
+  top: 50px;
+  width: 60%;
+  position: relative;
+  margin: 40px auto;
+  overflow: hidden;  /* Oculta todo lo que sobresalga del contenedor */
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.slide {
+  display: none;  /* Oculta todos los slides por defecto */
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  filter: blur(2px);
+  display: block;
+}
+
+.slide .text, .slide button {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.slide .text {
+  bottom: 105px; /* Ajusta según sea necesario */
+  color: white;
+  font-size: 50px;
+  padding: 10px 0;
+
+}
+
+.slide button {
+  bottom: 70px; /* Ajusta para alinear con el borde inferior de la imagen */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+.prev { left: 25px; }
+.next { right: 25px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* CATEGORIAS  */
+
+.categories-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.category {
+  background-color: #000;
+  border: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.categories-container h2 {
+  color: black; /* Cambia el color a negro */
+  text-align: center; /* Asumiendo que quieres que esté centrado */
+  margin-bottom: 10px; /* Espacio debajo del título para separarlo de los contenidos siguientes */
+  font-size: 50px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;  /* Tamaño de fuente adecuado para títulos de categorías */
+  font-weight: 700;  /* Bold para mayor impacto visual */
+  text-transform: uppercase;  /* Opcional: transforma el texto a mayúsculas para más énfasis */
+  color: #333;  /* Un color oscuro para mejor legibilidad */
+}
+
+.grid-container .category p {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.category img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  size-adjust: auto;
+}
+
+.category p {
+  font-size: 24px;
+  color: #fff;
+  position: relative;
+}
+
+.category:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* SECC BOTONES MOTOR */
+.custom-engine-section {
+  position: relative;
+  height: 500px; /* Ajusta la altura según tus necesidades */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Asegúrate de que no se desborde nada */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('seccmotor.png') no-repeat center center; /* Asegúrate de que la ruta de la imagen es correcta */
+  background-size: cover;
+  filter: blur(2px); /* Aplica el desenfoque aquí */
+  z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+.overlay {
+  position: relative;
+  z-index: 1; /* Asegura que el texto y los botones estén sobre la imagen de fondo */
+  width: 100%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  color: #ccc;
+  text-shadow: #fff;
+  background-color: #000;
+  letter-spacing: 2px;
+}
+
+.custom-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.custom-button:hover {
+  background-color: darkred;
+}
+
+/* SLIDESHOW MARCAS */
+.brands-slideshow-container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.brands-slideshow-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  height: 100px; /* Ajusta la altura según tus necesidades */
+  margin: 0 10px; /* Espacio entre las imágenes */
+}
+
+.brands-slide {
+  display: none; /* Ocultar todos los slides inicialmente */
+  width: 100%;
+  clear: both;
+}
+
+.brands-slide.active {
+  display: flex; /* Mostrar solo el slide activo */
+  justify-content: space-between;
+}
+
+.brand {
+  width: 30%;
+  margin: 0 1%;
+  text-align: center;
+}
+
+.brand img {
+  width: 100%;
+  height: auto;
+}
+
+.brand p {
+  color: black;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* RESP MEDIA SECC MOTORES*/
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .custom-button {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .custom-button {
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+}
+
+/* SLIDE RESPONSIVE MEDIA */ 
+@media (max-width: 768px) {
+  .slideshow-container {
+    width: 80%;  /* Increase width for smaller screens */
+    margin: 20px auto;
+  }
+
+  .slide .text {
+    font-size: 3rem;  /* Smaller font size for smaller screens */
+    bottom: 60px;
+  }
+
+  .slide button {
+    padding: 8px 16px;  /* Smaller padding for buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container {
+    width: 95%;  /* Further increase width for very small screens */
+  }
+
+  .slide .text {
+    font-size: 1.5rem;  /* Even smaller font size for very small screens */
+    bottom: 40px;
+  }
+
+  .prev, .next {
+    padding: 10px;  /* Smaller navigation buttons */
+  }
+}
+
+/* TODAS LAS CATEGORIAS */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+/*MOTORES ARMADOS*/
+.motortitle {
+  margin-left: 260px; /* Ajustar según el ancho del menú lateral */
+  padding: 20px;
+  transition: margin-left 0.3s; /* Animación para el contenido principal */
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  color:#000;
+  margin-top: 20px;
+
+}
+
+.motortitle h1 {
+  font-size: 24px; /* Tamaño grande para el título */
+  color: #d10000; /* Un rojo intenso, ajusta según tu paleta de colores */
+  position: static;
+  padding-top: 20px;
+}
+
+.zl1rojo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Añade espacio alrededor de la imagen */
+}
+
+.zl1rojo img {
+  max-width: 50%; /* Asegura que la imagen sea responsive y no exceda el ancho del contenedor */
+  border: 2px solid #000000; /* Crea un marco tenue alrededor de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra ligera para un efecto elevado */
+  transition: transform 0.3s ease; /* Suave transformación al hacer hover */
+  width: auto;
+  height: auto;
+}
+
+.zl1rojo img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse sobre la imagen */
+}
+
+
+.general {
+  margin-left: 260px; /* Ajustar según el ancho del menú lateral */
+  padding: 20px;
+  transition: margin-left 0.3s; /* Animación para el contenido principal */
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+  color:#000;
+  margin-top:-30px;
+  list-style-type: disc;
+  line-height: 1.6;
+}
+
+.general h1 {
+  font-size: 20px; /* Tamaño grande para el título */
+  color: #000; /* Un rojo intenso, ajusta según tu paleta de colores */
+  position: static;
+  text-align: center;
+}
+
+.ultimo {
+  margin-left: 260px; /* Ajustar según el ancho del menú lateral */
+  padding: 20px;
+  transition: margin-left 0.3s; /* Animación para el contenido principal */
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+  color:#000;
+  margin-top:-30px;
+  list-style-type: disc;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.ultimo h1 {
+  font-size: 20px; 
+  color: #d10000;
+  position: static;
+  text-align: center;
+}
+
+/*PRODUCTOS Y SERVICIOS */
+
+.prodyserv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Añade espacio alrededor de la imagen */
+}
+
+.prodyserv img {
+  max-width: 30%; /* Asegura que la imagen sea responsive y no exceda el ancho del contenedor */
+  border: 2px solid #000000; /* Crea un marco tenue alrededor de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra ligera para un efecto elevado */
+  padding: 10px; /* Espacio entre el marco y la imagen */
+  transition: transform 0.3s ease; /* Suave transformación al hacer hover */
+  width: auto;
+  height: auto;
+}
+
+.prodyserv img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse sobre la imagen */
+}
+
+.prodyserv2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Añade espacio alrededor de la imagen */
+}
+
+.prodyserv2 img {
+  max-width: 60%; /* Asegura que la imagen sea responsive y no exceda el ancho del contenedor */
+  border: 2px solid #000000; /* Crea un marco tenue alrededor de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra ligera para un efecto elevado */
+  padding: 10px; /* Espacio entre el marco y la imagen */
+  transition: transform 0.3s ease; /* Suave transformación al hacer hover */
+  width: auto;
+  height: auto;
+}
+
+.prodyserv2 img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse sobre la imagen */
+}
+
+/*QUIENES SOMOS*/
+
+.generalquienessomos {
+  margin-left: 260px; /* Ajustar según el ancho del menú lateral */
+  padding: 20px;
+  transition: margin-left 0.3s; /* Animación para el contenido principal */
+  margin-left:auto;
+  margin-right:auto;
+  color:#000;
+  list-style-type: disc;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 10px;
+}
+
+.quienessomosimagenes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Añade espacio alrededor de la imagen */
+}
+
+.quienessomosimagenes img {
+  max-width: 50%; /* Asegura que la imagen sea responsive y no exceda el ancho del contenedor */
+  border: 2px solid #000000; /* Crea un marco tenue alrededor de la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra ligera para un efecto elevado */
+  transition: transform 0.3s ease; /* Suave transformación al hacer hover */
+  width: auto;
+  height: auto;
+  margin-top: -200px;
+}
+
+.quienessomosimagenes img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse sobre la imagen */
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    position:static;
+    top: 0;
+    left: 0;
+    margin-bottom: 100px;
+}
+
+.contact-button {
+    background-color: #ff0000; /* Rojo */
+    color: #ffffff; /* Blanco */
+    border: none;
+    padding: 15px 30px; /* Tamaño mediano */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #cc0000; /* Rojo más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto reactivo */
+}
+
+/* VIDEO PAG PRINCIPAL */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Ajusta el tamaño máximo del contenedor del video */
+  margin-bottom: 100px; /* Ajusta este valor según necesites */
+}
+
+.background-video {
+  width: 100%;
+  height: auto;
+}
+
+.video-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Añade sombra al texto para mejor legibilidad */
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* Ajusta este valor según necesites */
+}
+
+/*REPROGRAMACION*/
+
+.custom-container {
+    padding: 2rem;
+}
+
+.custom-main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.custom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.custom-subscribe-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.custom-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.custom-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+button.primary {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+button.primary:hover {
+  background-color: #0056b3;
+}
+
+.custom-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(45deg, #ff6f61, #de1f45);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.custom-button:hover {
+  background: linear-gradient(45deg, #de1f45, #ff6f61);
+  transform: translateY(-2px);
+}

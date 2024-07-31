@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Performance Automotriz</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="header">
+    <div id="menu-icon" class="menu-icon" onclick="toggleMenu()">☰</div>
+    <form class="search-form">
+      <input type="text" placeholder="Ingresa palabra clave o artículo." required>
+        <button type="submit"><i class="fa fa-search"></i></button>  <!-- Icono de lupa -->
+        </form>
+    <img src="encierro.jpg" alt="Logo" class="logo">
+</div>
+      
+<!--BARRA NAVEGACION-->
+<div id="navbar" class="navbar">
+  <!-- Asegúrate de que el menú no cubra el icono de menú hamburguesa -->
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="quienessomos.html">¿Quiénes somos?</a></li>
+    <li><a href="productosyservicios.html">Productos y servicios</a></li>
+    <li><a href="reprogramacion.html">Reprogramación</a></li>
+    <li><a href="motores-armados.html">Motores armados</a></li>
+    <li><a href="#">Bloques</a></li>
+    <li><a href="#">Cabezas</a></li>
+    <li><a href="#">Nitro y boost</a></li>
+    <li><a href="#">Medidores</a></li>
+    <li><a href="#">Aceite y otros fluidos</a></li>
+    <li><a href="#">Autos preparados</a></li>
+    <li><a href="#">Contacto</a></li>
+    <li><a href="#">Dudas y sugerencias</a></li>
+    <li><a href="#">Contacto</a></li>
+    <!-- Más secciones si es necesario -->
+  </ul>
+</div>
+
+<!--SLIDESHOW-->
+<div class="slideshow-container">
+    <!-- Cada slide -->
+    <div class="slide">
+      <img src="indexslide/Motores.png" alt="Motores">
+      <div class="text">MOTORES</div>
+      <button onclick="location.href='#';">COMPRA AHORA</button>
+    </div>
+    <div class="slide">
+      <img src="indexslide/ARBOLES.png" alt="Árboles">
+      <div class="text">ÁRBOLES</div>
+      <button onclick="location.href='#';">COMPRA AHORA</button>
+    </div>
+    <div class="slide">
+      <img src="indexslide/Nitro.png" alt="Nitro">
+      <div class="text">NITRO</div>
+      <button onclick="location.href='#';">COMPRA AHORA</button>
+    </div>
+    <div class="slide">
+      <img src="indexslide/Carros.png" alt="Carros">
+      <div class="text">AUTOS PREPARADOS</div>
+      <button onclick="location.href='#';">COMPRA AHORA</button>
+    </div>
+    <div class="slide">
+        <img src="indexslide/repro.png" alt="Repro">
+        <div class="text">REPROS Y CUSTOM TUNING</div>
+        <button onclick="location.href='#';">COMPRA AHORA</button>
+    </div>
+    <div class="slide">
+        <img src="indexslide/turbosc.png" alt="Turbos">
+        <div class="text">TURBOS Y SUPERCHARGERS</div>
+        <button onclick="location.href='#';">COMPRA AHORA</button>
+      </div>
+    <div class="slide">
+        <img src="indexslide/escapes.png" alt="Escapes">
+        <div class="text">ESCAPES</div>
+        <button onclick="location.href='#';">COMPRA AHORA</button>
+      </div>    
+    
+  
+    <!-- Botones de control -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>  
+  
+
+<div class="main">
+
+<!--TODAS LAS CATEGORIAS-->
+    <div class= "categories-container">
+        <h2>TODAS LAS CATEGORÍAS</h2>
+        <div class="grid-container">
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catrepro.png" alt="REPROS">
+                <p>REPROS</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catmotor.png" alt="MOTORES">
+                <p>MOTORES</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catbloques.png" alt="BLOQUES">
+                <p>BLOQUES</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catcabezas.png" alt="CABEZAS">
+                <p>CABEZAS</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catnitro.png" alt="NITRO Y BOOST">
+                <p>NITRO Y BOOST</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catturbos.png" alt="TURBOS">
+                <p>TURBOS</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catmedid.png" alt="MEDIDORES">
+                <p>MEDIDORES</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catfluidos.png" alt="FLUIDOS">
+                <p>FLUIDOS</p>
+            </div>
+            <div class="category" onclick="location.href='#';">
+                <img src="indexcategorias/catautos.png" alt="AUTOS">
+                <p>AUTOS</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-engine-section">
+        <div class="background-image"></div> <!-- Div para la imagen de fondo -->
+        <div class="overlay">
+          <div class="title">Dealer #1 de piezas automotrices personalizadas y de alto rendimiento</div>
+          <button class="custom-button">MOTORES COMPLETOS</button>
+          <button class="custom-button">SHORT Y LONG BLOCK</button>
+          <button class="custom-button">CONJUNTOS ROTATIVOS</button>
+        </div>
+      </div>     
+
+
+      <!--NUEVO SLIDE MARCAS-->
+      <div class="brands-slideshow-container">
+        <h2>NUESTRAS MARCAS</h2>
+        <div class="brands-slide active"> <!-- Solo el primer slide tiene la clase 'active' inicialmente -->
+            <div class="brand">
+                <img src="indexmarcas/wiseco.png" alt="Brand 1">
+                
+            </div>
+            <div class="brand">
+                <img src="indexmarcas/compcams.png" alt="Brand 2">
+               
+            </div>
+            <div class="brand">
+                <img src="indexmarcas/manley.png" alt="Brand 3">
+               
+            </div>
+        </div>
+        <!-- Añadir más 'brands-slide' según sea necesario con más marcas -->
+        <div class="brands-slide"> <!-- Siguiente slide sin la clase 'active' -->
+            <div class="brand">
+                <img src="indexmarcas/jepistons.png" alt="Brand 4">
+               
+            </div>
+            <div class="brand">
+                <img src="indexmarcas/texaspeed.png" alt="Brand 5">
+              
+            </div>
+            <div class="brand">
+                <img src="indexmarcas/briantooley.png" alt="Brand 6">
+               
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+  
+    <div class="video-container">
+      <video autoplay muted loop class="background-video">
+          <source src="videos/videotaller.mp4" type="video/mp4">
+          Tu navegador no soporta la etiqueta de video.
+      </video>
+      <div class="video-overlay-text">
+          <h2>TU MEJOR ALIADO EN PERFORMANCE AUTOMOTRIZ</h2>
+      </div>
+  </div>
+    
+
+<div class="footer">
+  <p>&copy; 2024 Tienda de Performance Automotriz</p>
+</div>
+
+<script src="enfi.js">
+  function toggleMenu() {
+    var navbar = document.getElementById("navbar");
+    // Se verifica si el menú está visible.
+    if (navbar.style.display === "block") {
+      navbar.style.display = "none";
+    } else {
+      navbar.style.display = "block";
+    }
+  }
+
+</script>
+</body>
+</html>
